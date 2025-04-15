@@ -62,6 +62,10 @@ func (monitor *ContainerMonitor) getStateFSMNode(httpInfo *HttpInfo) *StateFSMNo
 		return node
 	}
 	node := monitor.runningState[traceId]
+	if node == nil {
+		// 新增：处理节点为空的情况
+		return nil
+	}
 	fsm := monitor.getStateFSM(node.API)
 	// FSM未建立完毕, node信息不全
 	if node.To == "" && httpInfo.IsLeaveContainer(monitor.Id) {
