@@ -23,7 +23,7 @@ func (formatter *LoggerFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 	if entry.Buffer != nil {
 		b = entry.Buffer
 	}
-	timestamp := entry.Time.Format("2006-01-02 15:04:05")
+	timestamp := entry.Time.Format("2006-01-02 15:04:05.000")
 	level := strings.ToUpper(entry.Level.String())[:4]
 	var log string
 	if entry.HasCaller() {

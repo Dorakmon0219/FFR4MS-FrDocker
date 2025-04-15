@@ -19,7 +19,8 @@ FFR4MS-Demo [Gitee](https://gitee.com/zengtao321/ffr4ms-demo) [GitHub](https://g
 1. Golang v1.20
 2. Pcap
 ```bash
-apt install libpcap-dev
+apt install libpcap-dev # Debian/Ubuntu
+sudo yum install libpcap-devel # centos7
 ```
 3. MongoDB
 ```bash
@@ -59,3 +60,12 @@ frdocker frecovery -n ${network} -r ${registry}
 frdocker frecovery -n ${network} -r ${registry} --color
 ```
 
+![image-20250319164949706](README.assets/image-20250319164949706.png)
+
+![image-20250319165101478](README.assets/image-20250319165101478.png)
+
+## 卸载
+
+```
+make uninstall
+```
