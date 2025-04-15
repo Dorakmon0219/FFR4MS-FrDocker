@@ -36,6 +36,9 @@ func (cli *DockerCLI) GetAllContainers() error {
 		return err
 	}
 	for _, container := range containers {
+		if len(container.Ports) == 0 {
+			continue
+		}
 		// 查到的是内网IP
 		var ip string
 		for _, network := range container.NetworkSettings.Networks {
